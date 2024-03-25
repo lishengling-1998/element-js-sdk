@@ -1,6 +1,6 @@
 {
   "name": "element-glby-sdk",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Javascript SDK for the www.element.market",
   "main": "lib/index.js",
   "type": "lib/index.d.ts",
