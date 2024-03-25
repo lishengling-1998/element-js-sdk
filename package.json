@@ -1,13 +1,13 @@
 {
-  "name": "element-js-sdk",
-  "version": "2.1.9",
+  "name": "element-glby-sdk",
+  "version": "1.0.5",
   "description": "Javascript SDK for the www.element.market",
   "main": "lib/index.js",
   "type": "lib/index.d.ts",
   "author": "element.market",
   "license": "MIT",
   "scripts": {
-    "publish": "npm publish",
+    "pub": "npm publish",
     "dev:tsc": "tsc -w -p tsconfig.json"
   },
   "dependencies": {
