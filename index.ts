@@ -3,6 +3,9 @@ export { ethers, providers, Signer, BigNumber } from 'ethers'
 export type { TransactionResponse, TransactionReceipt } from '@ethersproject/abstract-provider'
 
 export type { OrderQuery } from './src/api/openApiTypes'
+export { toOrderInformation, toOrderRequest } from './src/element/order/orderConverter'
+
+export { getOrderTypedData } from './src/element/order/orderTypedData.ts'
 
 export { NULL_ADDRESS, ETH_TOKEN_ADDRESS, Network, OrderSide, SaleKind, Standard, Market } from './src/types/types'
 

@@ -144,7 +144,7 @@ export class ElementSDK {
     return await this.makeOrder(params, true)
   }
 
-  public async fillOrder(params: FillOrderParams): Promise<TransactionResponse> {
+  public async fillOrder(params: FillOrderParams): Promise<LimitedCallSpec> {
     if (params.order.standard?.toString().toLowerCase() != Standard.ElementEx) {
       if (toStandardERC20Token(params.order.paymentToken) != NULL_ADDRESS) {
         throw Error(
@@ -197,7 +197,7 @@ export class ElementSDK {
     }
   }
 
-  public async batchBuyWithETH(params: BatchBuyWithETHParams): Promise<TransactionResponse> {
+  public async batchBuyWithETH(params: BatchBuyWithETHParams): Promise<LimitedCallSpec> {
     this.checkSellOrdersParams('batchBuyWithETH', params.orders)
     const taker = await this.web3Signer.getCurrentAccount()
     const tradeData = await queryTradeData(taker, params.orders, this.apiOption)
@@ -211,7 +211,7 @@ export class ElementSDK {
       maxPriorityFeePerGas: params.maxPriorityFeePerGas,
       maxFeePerGas: params.maxFeePerGas
     }
-    return this.web3Signer.ethSend(call)
+    return call
   }
 
   public async encodeTradeData(params: EncodeTradeDataParams): Promise<TradeData> {

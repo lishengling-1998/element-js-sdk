@@ -1,14 +1,6 @@
 {
-  "include": [
-    "./src/**/*",
-    "./index.ts"
-  ],
-  "exclude": [
-    "./node_modules",
-    "./examples/**/*",
-    "config/webpack.config.js",
-    "config/webpack.node.config.js"
-  ],
+  "include": ["./src/**/*", "./index.ts"],
+  "exclude": ["./node_modules", "./examples/**/*", "config/webpack.config.js", "config/webpack.node.config.js"],
   "compilerOptions": {
     "baseUrl": "./src",
     "paths": {},
@@ -20,6 +12,8 @@
     "module": "commonjs",
     /* 增加 type  类型的检查 */
     "isolatedModules": true,
+    "allowImportingTsExtensions": true,
+    "noEmit": true,
     // 支持导入json模块
     "strict": true,
     /* Enable all strict type-checking options. */
@@ -29,17 +23,9 @@
     /* Skip type checking of declaration files. */
     "forceConsistentCasingInFileNames": true,
     /* Disallow inconsistently-cased references to the same file. */
-    "typeRoots": [
-      "node_modules/@0x/typescript-typings/types",
-      "node_modules/@types"
-    ],
+    "typeRoots": ["node_modules/@0x/typescript-typings/types", "node_modules/@types"],
     "downlevelIteration": true,
-    "lib": [
-      "es5",
-      "dom",
-      "es6",
-      "es2019"
-    ],
+    "lib": ["es5", "dom", "es6", "es2019"],
     "noImplicitAny": false,
     // 不允许隐式的 any 类型
     "removeComments": true,
